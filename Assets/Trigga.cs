@@ -1,10 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using System.Diagnostics;
-using System.Media;
 using UnityEngine;
 
-public class Triggerz : MonoBehaviour
+public class Trigga : MonoBehaviour
 {
 
     private HashSet<Collider> m_colliders = new HashSet<Collider>();
@@ -12,28 +10,28 @@ public class Triggerz : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Player")
-        {
+       
             m_colliders.Add(other);
-        }
+        
 
-       else
-        {
-            Debug.Log("NONO")
-        }
+        
 
     }
 
 
-    void OnTriggerExit(Collider Dzone)
+    void OnTriggerExit(Collider other)
     {
 
         if (other.tag == "Player")
         {
-            m_colliders.Remove(Dzone);
+            m_colliders.Remove(other);
         }
 
-       
+        else
+        {
+            Debug.Log("tjaja");
+        }
+
 
     }
 
@@ -54,3 +52,4 @@ public class Triggerz : MonoBehaviour
         Debug.Log(m_colliders.Count);
     }
 }
+

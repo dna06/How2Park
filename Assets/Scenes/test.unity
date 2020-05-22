@@ -326,7 +326,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 246188790}
-  - component: {fileID: 246188791}
   m_Layer: 0
   m_Name: Triggers
   m_TagString: Untagged
@@ -352,18 +351,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &246188791
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 246188789}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3a92f15d60252de499be3f701e4549a8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &250523583
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -901,7 +888,7 @@ GameObject:
   - component: {fileID: 367725128}
   m_Layer: 0
   m_Name: Vorne_Rechts
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1492,6 +1479,18 @@ MonoBehaviour:
   maxSteerAngle: 30
   motorForce: 600
   brakeStrength: 1000
+--- !u!114 &1206737602
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1206737597}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 980062bf8a887f243bcef0dd3d7e5439, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1309069309
 GameObject:
   m_ObjectHideFlags: 0
@@ -1840,7 +1839,7 @@ GameObject:
   - component: {fileID: 1531201543}
   m_Layer: 0
   m_Name: Hinten_Rechts
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2044,7 +2043,7 @@ GameObject:
   - component: {fileID: 1908993508}
   m_Layer: 0
   m_Name: Vorne_Links
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2088,7 +2087,7 @@ GameObject:
   - component: {fileID: 1926241011}
   m_Layer: 0
   m_Name: Hinten_Links
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2276,6 +2275,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Classic_16
+      objectReference: {fileID: 0}
+    - target: {fileID: 3406223536895818175, guid: d8de4996833db7049a1c47591567a5cf,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 4089730299932133195, guid: d8de4996833db7049a1c47591567a5cf,
         type: 3}

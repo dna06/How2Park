@@ -1,5 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
+using System.Media;
 using UnityEngine;
 
 public class Triggerz : MonoBehaviour
@@ -8,10 +10,17 @@ public class Triggerz : MonoBehaviour
     private HashSet<Collider> m_colliders = new HashSet<Collider>();
 
 
-    void OnTriggerEnter(Collider DZone)
+    void OnTriggerEnter(Collider other)
     {
+        if (other.tag == "Player")
+        {
+            m_colliders.Add(other);
+        }
 
-        m_colliders.Add(DZone);
+       else
+        {
+            Debug.Log("NONO")
+        }
 
     }
 
@@ -19,7 +28,12 @@ public class Triggerz : MonoBehaviour
     void OnTriggerExit(Collider Dzone)
     {
 
-        m_colliders.Remove(Dzone);
+        if (other.tag == "Player")
+        {
+            m_colliders.Remove(Dzone);
+        }
+
+       
 
     }
 

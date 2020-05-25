@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 public class HoverPad : MonoBehaviour
 {
-
+    public GameManager gameManager; 
     private HashSet<Collider> m_colliders = new HashSet<Collider>();
 
 
@@ -30,7 +30,7 @@ public class HoverPad : MonoBehaviour
 
         if (m_colliders.Count == 4)
         {
-            Debug.Log("You Did It!! :D");
+            gameManager.EndGame(); 
         }
 
         else

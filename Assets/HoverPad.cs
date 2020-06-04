@@ -8,12 +8,8 @@ public class HoverPad : MonoBehaviour
     public GameManager gameManager; 
     private HashSet<Collider> m_colliders = new HashSet<Collider>();
 
-    public GameObject uiObject;
 
-    void Start()
-    {
-        uiObject.SetActive(false);
-    }
+    // public GameObject jubi;
 
     void OnTriggerEnter(Collider DZone)
     {
@@ -36,7 +32,9 @@ public class HoverPad : MonoBehaviour
 
         if (m_colliders.Count == 4)
         {
-            uiObject.SetActive(true);
+            Debug.Log("yeah");
+
+            //jubi.setActive(true);
         }
 
         else

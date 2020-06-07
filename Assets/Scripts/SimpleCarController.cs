@@ -17,7 +17,7 @@ public class SimpleCarController : MonoBehaviour
     public Transform rearDriverT, rearPassengerT;
     public float maxSteerAngle = 30;
 
-    public float motorForce = 50;
+     public float motorForce = 50;
 
     public float brakeStrength;
 
@@ -36,9 +36,10 @@ public class SimpleCarController : MonoBehaviour
 
     public void GetInput()
     {
-        m_horizontalInput = SimpleInput.GetAxis("Horizontal");
-        m_verticalInput = SimpleInput.GetAxis("Vertical");
-        m_brakeInput = SimpleInput.GetKey(KeyCode.Space);
+        m_horizontalInput = Input.GetAxis("Horizontal");
+        m_verticalInput = Input.GetAxis("Vertical");
+        m_brakeInput = Input.GetKey(KeyCode.Space);
+        // motorForce = Input.GetKey()
     }
 
     private void Steer()

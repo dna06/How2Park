@@ -2,14 +2,23 @@
 using System.Collections;
 using UnityEngine;
 using System.Collections.Generic;
+using UnityEngine.UI;
+using System.Globalization;
 
 public class HoverPad : MonoBehaviour
 {
-    public GameManager gameManager; 
+ 
     private HashSet<Collider> m_colliders = new HashSet<Collider>();
 
 
-    // public GameObject jubi;
+    public GameObject jubi;
+
+    public float timeStart;
+    public Text textBox;
+
+    bool timerActive = true;
+
+   
 
     void OnTriggerEnter(Collider DZone)
     {
@@ -26,20 +35,33 @@ public class HoverPad : MonoBehaviour
 
     }
 
+  
+
+
     void Update ()
     {
 
+        if (timerActive)
+        {
+            timeStart += Time.deltaTime;
+            textBox.text = timeStart.ToString("F2");
+        }
 
         if (m_colliders.Count == 4)
         {
             Debug.Log("yeah");
 
-            //jubi.setActive(true);
+            jubi.SetActive(true);
+
+            timerActive=false;
+
+
         }
 
         else
         {
             Debug.Log("Waiting or it...");
+            jubi.SetActive(false);
         }
 
         Debug.Log(m_colliders.Count);

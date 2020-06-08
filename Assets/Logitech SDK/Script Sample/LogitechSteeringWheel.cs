@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections;
 using System.Text;
+using JetBrains.Annotations;
 
 public class LogitechSteeringWheel : MonoBehaviour
 {
@@ -88,6 +89,7 @@ public class LogitechSteeringWheel : MonoBehaviour
             actualState += "z-axis rotation :" + rec.lRz + "\n";
             actualState += "extra axes positions 1 :" + rec.rglSlider[0] + "\n";
             actualState += "extra axes positions 2 :" + rec.rglSlider[1] + "\n";
+           
             switch (rec.rgdwPOV[0])
             {
                 case (0): actualState += "POV : UP\n"; break;
@@ -100,6 +102,9 @@ public class LogitechSteeringWheel : MonoBehaviour
                 case (31500): actualState += "POV : UP-LEFT\n"; break;
                 default: actualState += "POV : CENTER\n"; break;
             }
+
+          
+
 
             //Button status :
 
@@ -341,6 +346,8 @@ public class LogitechSteeringWheel : MonoBehaviour
             actualState = "THIS WINDOW NEEDS TO BE IN FOREGROUND IN ORDER FOR THE SDK TO WORK PROPERLY";
         }
     }
+
+
 
 
 

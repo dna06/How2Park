@@ -5,7 +5,9 @@ using UnityEngine;
 
 public class SimpleCarController : MonoBehaviour
 {
-  
+    
+     static public LogitechGSDK logitechGSDK;  
+
     private float m_horizontalInput;
     private float m_verticalInput;
     private float m_steeringAngle;
@@ -36,7 +38,7 @@ public class SimpleCarController : MonoBehaviour
 
     public void GetInput()
     {
-        m_horizontalInput = Input.GetAxis("Horizontal");
+        m_horizontalInput = Input.GetAxis("Horizontal"); 
         m_verticalInput = Input.GetAxis("Vertical");
         m_brakeInput = Input.GetKey(KeyCode.Space);
         // motorForce = Input.GetKey()

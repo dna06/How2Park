@@ -1,17 +1,19 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.Remoting.Messaging;
 using System.Security.Cryptography;
 using UnityEngine;
 
 public class SimpleCarController : MonoBehaviour
 {
     
-     static public LogitechGSDK logitechGSDK;  
+     static public LogitechGSDK logitechGSDK;
+    static public LogitechExample logitechExample; //
 
     private float m_horizontalInput;
     private float m_verticalInput;
     private float m_steeringAngle;
-    private bool m_brakeInput;
+    private float m_brakeInput;
 
     public WheelCollider frontDriverW, frontPassengerW;
     public WheelCollider rearDriverW, rearPassengerW;
@@ -26,11 +28,13 @@ public class SimpleCarController : MonoBehaviour
 
     private void FixedUpdate()
     {
+
         GetInput();
         Steer();
         Accelerate();
         UpdateWheelPoses();
         HandBrake();
+   
 
     }
 
@@ -38,9 +42,9 @@ public class SimpleCarController : MonoBehaviour
 
     public void GetInput()
     {
-        m_horizontalInput = Input.GetAxis("Horizontal"); 
+        m_horizontalInput = Input.GetAxis("Horizontal");
         m_verticalInput = Input.GetAxis("Vertical");
-        m_brakeInput = Input.GetKey(KeyCode.Space);
+        m_brakeInput = Input.GetAxis("Brake");
         // motorForce = Input.GetKey()
     }
 
@@ -80,7 +84,7 @@ public class SimpleCarController : MonoBehaviour
 
     private void HandBrake()
     {
-        if (m_brakeInput)
+        if (m_brakeInput>0)
         {
             frontDriverW.brakeTorque = brakeStrength; frontPassengerW.brakeTorque = brakeStrength;
         }
